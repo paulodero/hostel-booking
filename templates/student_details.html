@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Student Hostel Details</title>
+
+<script type="text/javascript" src="/js/validateForm.js"></script>
+</head>
+<body>
+<table>
+{% for stud in student_details %}
+<tr><td><strong>Name:</strong></td> <td>{{ stud.name }}</td></tr>
+<tr><td><strong>Reg Number:</strong></td><td> {{ stud.reg_no }}</td></tr>
+<tr><td><strong>Gender: </strong></td><td>{{ stud.gender }}</td></tr>
+<tr><td><strong>Period: </strong></td><td>{{ stud.period }}</td></tr>  
+<tr><td><strong>Hostel: </strong></td><td>{{ stud.hostel }}</td></tr>
+<tr><td><strong>Block: </strong></td><td>{{ stud.block }}</td></tr>
+<tr><td><strong>Room No: </strong></td><td>{{ stud.roomNo }}</td></tr>
+<tr><td><strong>Room Type: </strong></td><td>{{ stud.roomType }}</td></tr>  
+ 
+ {% endfor %}
+ </table>
+  <a href="/">Back</a>
+</body>
+</html>

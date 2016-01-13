@@ -1,0 +1,9 @@
+
+cron:
+- description: daily summary job
+  url: /cron/update_data
+  schedule: every 1 mins
+  
+- description: Open Applications
+  url: /cron/open_application
+  schedule: every 1 mins

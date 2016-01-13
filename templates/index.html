@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>{{ institution }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+<link rel="stylesheet" href="/css/css.css">
+
+
+<!-- jQuery -->
+<script type="text/javascript" src="js/jquery-loader.js"></script>
+
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+
+
+<!-- SmartMenus jQuery init -->
+<script type="text/javascript">
+	$(function() {
+		$('#main-menu').smartmenus({
+			subMenusSubOffsetX: 1,
+			subMenusSubOffsetY: -8
+		});
+	});
+</script>
+
+<!-- SmartMenus core CSS (required) -->
+<link href="css/sm-core-css.css" rel="stylesheet" type="text/css" />
+
+<!-- "sm-blue" menu theme (optional, you can use your own CSS, too) -->
+<link href="css/sm-blue.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+
+<!-- Sample menu definition -->
+<ul id="main-menu" class="sm sm-blue">
+  <li><a href="/">Home</a></li>
+   {% if isAuthorised %}
+  <li><a href="">Hostel Application</a>
+  <ul>
+       {% if hasApplied %}
+        <li><a href="#">You Already Applied!</a></li>
+       {% else %}
+      <li><a href="/application_first">First year Students</a></li>
+      <li><a href="/application_cont">Continuing Students</a></li>
+      {% endif %}
+    </ul>
+    </li>
+  <li><a href="/status">Check Application Status</a></li>
+    {% endif %}
+      {% if isSuperAdmin %}
+       <li><a href="#">Student Data</a>
+    <ul>
+      <li><a href="/csv?category=1">1st year Applicants</a></li>
+      <li><a href="/csv?category=2">Continuing Applicants</a></li>
+      <li><a href="/upload_csv">Upload CSV</a></li>
+    </ul>
+  </li>
+       {% endif %}
+       {% if isSuperAdmin %}
+   <li><a href="#">Admin</a>
+    <ul>
+      <!--<li><a href="/openApp">Open Application</a></li>-->
+      <li><a href="/allowReApp">Allow Re-Application</a></li>
+      <li><a href="/disAllowReApp">Disallow Re-Application</a></li>
+    </ul>
+  </li>
+       {% endif %}
+  <li><a href="http://accommodation.ku.ac.ke" target="_blank">Accommodation Website</a></li>
+   {% if isLogged %}
+  <li><a href={{logout_url}}>LogOut</a></li>
+  {% endif %}
+  
+  
+  </ul>
+
+<div class="userinfo">
+{% if isLogged %}
+<strong>Status: </strong> <code color="red"> {{ statusMessage }} </code>
+<strong>Not</strong> <code>{{owner}}</code>? <a href={{logout_url}}>Logout</a>
+{% endif %}
+</div>
+
+<div id="main">
+<div id="top">
+<img src="/images/logo.png">
+</div>
+<div id="bottom">
+{{ app }}
+</div>
+</div>
+
+</body>
+</html>

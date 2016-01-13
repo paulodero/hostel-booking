@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Upload CSV</title>
+</head>
+<body>
+<h4>Upload Hostel Allocation CSV</h4>
+<p> Ensure the csv being uploaded has the following format.<br>
+    The csv file uploaded should not contain more than 5000 records
+
+<table>
+
+<tr></tr>
+<tr><td><strong>regno,name,gender,hostel,block,roomNo,roomtype,period,#</strong></td></tr>
+<tr><td><code>A111/4080/2014,manyara njoki margaret,female,lukenya,A,10,quad,2014-1,#</code></td></tr>
+<tr><td><code>A111/4081/2014,mung'ara diana gakii,female,nyayo 2,A,10,double,2014-1,#</code></td></tr>
+<tr><td><code>A111/4082/2014,kisiang'ani p naliaka,female,new aberdares,A,10,quad,2014-1,#</code></td></tr>
+<tr><td><code>A111/4083/2014,mburu joshua gathirwa,male,mfumbiro,A,10,quad,2014-1,#</code></td></tr>
+<tr><td><code>A111/4084/2014,kamau w agnes,female,nyayo 1,A,10,double,2014-1,#</code></td></tr>
+
+</table>
+<p>
+       <form action="/upload" method="POST" enctype="multipart/form-data">
+Upload File: <input type="file" name="hostupload"><br> 
+<p><input type="submit" name="submit" value="Submit">
+ </form>
+ <div class="user_message">
+<P><code><strong>{{ upload_message }}</strong></code>
+</div>
+</body>
+</html>

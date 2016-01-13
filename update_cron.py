@@ -1,12 +1,10 @@
-'''
-Created on 19 Oct 2014
 
-@author: podero
-'''
 '''
 Created on 6 Oct 2014
 
 @author: podero
+
+scheduled as a cron job to process uploaded csv file data containing student allocation information.
 '''
 import ops
 from google.appengine.ext import webapp

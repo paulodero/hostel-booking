@@ -2,6 +2,8 @@
 Created on 6 Oct 2014
 
 @author: podero
+
+uploads a csv file to be processed by cron job.
 '''
 
 import cgi

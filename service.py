@@ -2,6 +2,9 @@
 Created on 4 Oct 2014
 
 @author: podero
+
+
+This is the webservice that responds to http requests from Google forms' appscript.
 '''
 import simplejson as json
 import ops

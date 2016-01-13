@@ -4,6 +4,8 @@ Created on 6 Oct 2014
 @author: podero
 
 uploads a csv file to be processed by cron job.
+
+Reads the text contained in the csv file and posts into the appengine datastore.
 '''
 
 import cgi
